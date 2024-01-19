@@ -14,18 +14,6 @@ client = ComputerVisionClient(
     credentials=credentials
 )
 
-# Check to see if the computer vision API is working
-# domain = "landmarks"
-# url = "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_March_2010-1.jpg"
-# language = "en"
-# max_descriptions = 3
-
-# analysis = client.describe_image(url, max_descriptions, language)
-
-# for caption in analysis.captions:
-#     print(caption.text)
-#     print(caption.confidence)
-
 def read_image(uri):
     numberOfCharsInOperationId = 36
     maxRetries = 10
