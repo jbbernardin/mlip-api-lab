@@ -2,9 +2,10 @@ from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
 import time
+from sec import cred
 
-endpoint = "ENTER ENDPOINT HERE"
-key = "ENTER KEY HERE"
+endpoint = cred['endpoint']
+key = cred['key']
 
 credentials = CognitiveServicesCredentials(key)
 
@@ -12,6 +13,18 @@ client = ComputerVisionClient(
     endpoint=endpoint,
     credentials=credentials
 )
+
+# Check to see if the computer vision API is working
+# domain = "landmarks"
+# url = "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_March_2010-1.jpg"
+# language = "en"
+# max_descriptions = 3
+
+# analysis = client.describe_image(url, max_descriptions, language)
+
+# for caption in analysis.captions:
+#     print(caption.text)
+#     print(caption.confidence)
 
 def read_image(uri):
     numberOfCharsInOperationId = 36
